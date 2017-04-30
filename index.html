@@ -2,26 +2,28 @@
 <body style="background-color:powderblue;">
 <h1> Healthy Food Recipes </h1>
 <p1> <br> Those who are diagnosed with diabetes and have food allergies (such as myself) are limited to the types of foods that they can consume. This website is going to help list the types of food recipes that are eatible to diabetics and people who have foods allergies and are also delicious! <br> </p1>
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-</div>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+
   <h2> <p2> <strong> <br> Recipes for Diabetics </strong> </p2> </h2>
 <br> <img src="http://www.steamykitchen.com/wp-content/uploads/2013/07/roasted-brussels-sprouts-with-sweet-chili-sauce-recipe-9562.jpg" alt="www.steamykitchen.com" width="300" height="180"> <br> 
   <p3> <br> <i> <strong> Roasted Brussel Sprouts </strong> </i> </p3>
